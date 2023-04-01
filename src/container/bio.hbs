@@ -4,188 +4,203 @@
 --}}
 
 <div>
-    {{#with person}}
     <div>
         <h1>{{name}}</h1>
     </div>
+
     <div>
-        <em>Age: {{age}}</em>
+        <em>{{birthdate}}</em>
     </div>
+
     <div>
-        <em>Gender: {{gender}}</em>
+        <em>{{birthplace}}</em>
+    </div>
+
+    <div>
+        <em>{{deathdate}}</em>
+    </div>
+
+    <div>
+        <em>{{deathplace}}</em>
+    </div>
+
+    <div>
+        <em>{{occupation}}</em>
+    </div>
+
+    <div>
+        <em>{{known_for}}</em>
     </div>
 
     <br>
-
-    <div>
-        <address>
-            <em>
-                {{address.street}}, {{address.city}}, {{address.state}}, {{address.zip}}, {{address.country}}
-            </em>
-        </address>
-    </div>
-
     <hr>
 
-    <section>
-        <div>
-            <strong>Education</strong>
-        </div>
+    <div>
+        <strong>Education</strong>
+    </div>
+    <div>
         <ul>
             {{#each education}}
             <li>
                 {{degree}}
             </li>
             <li>
-                {{major}}
+                {{field}}
             </li>
             <li>
-                {{university}}
+                {{institution}}
             </li>
-            <li>
-                {{graduationYear}}
-            </li>
+            <li>{{year}}</li>
             {{/each}}
         </ul>
-    </section>
+    </div>
 
-    <hr>
+    <br>
 
-    <section>
-        <div>
-            <strong>WorkExperience</strong>
-        </div>
-
+    <div>
+        <strong>Notable publications</strong>
+    </div>
+    <div>
         <ul>
-            {{#each workExperience}}
-            <li>
-                {{company}}
-            </li>
+            {{#each notable_publications}}
             <li>
                 {{title}}
             </li>
             <li>
-                {{startDate}}
+                {{year}}
             </li>
             <li>
-                {{endDate}}
+                {{publisher}}
             </li>
-            <li>
-                {{responsibilities}}
-            </li>
-            <li>
-                {{year_founded}}
-            </li>
-            <li>
-                {{industry}}
-            </li>
+            {{/each}}
+        </ul>
+    </div>
 
-            <br>
+    <br>
 
-            <div>
-                <strong>Employees</strong>
-            </div>
-
-            {{#each employees}}
-
+    <div>
+        <strong>Partners</strong>
+    </div>
+    <div>
+        <ul>
+            {{#each partners}}
             <li>
                 {{name}}
             </li>
             <li>
-                {{position}}
+                {{relationship}}
             </li>
             <li>
-                {{department}}
+                {{years}}
             </li>
+            {{/each}}
+        </ul>
+    </div>
 
-            <br>
+    <br>
 
-            <div>
-                <strong>Projects</strong>
-            </div>
-
-            {{#each projects}}
+    <div>
+        <strong>Awards</strong>
+    </div>
+    <div>
+        <ul>
+            {{#each awards}}
             <li>
-                {{name}}
+                {{title}}
+            </li>
+            <li>
+                {{year}}
+            </li>
+            <li>
+                {{description}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <strong>Influences</strong>
+    </div>
+    <div>
+        <ul>
+            {{influences}}
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <strong>Influenced</strong>
+    </div>
+    <div>
+        <ul>
+            {{influenced}}
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <strong>Quotes</strong>
+    </div>
+    <div>
+        <ul>
+            {{quotes}}
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <strong>Major discoveries</strong>
+    </div>
+    <div>
+        <ul>
+            {{#each major_discoveries}}
+            <li>
+                {{title}}
+            </li>
+            <li>
+                {{year}}
+            </li>
+            <li>
+                {{description}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <br>
+
+    <div>
+        <strong>Contributions</strong>
+    </div>
+    <div>
+        <ul>
+            {{#with contributions}}
+            <li>
+                {{title}}
             </li>
             <li>
                 {{description}}
             </li>
             <li>
-                {{status}}
+                {{year}}
             </li>
-
-            <br>
-
-            <div>
-                <strong>Teams</strong>
-            </div>
-
-            {{#each teams}}
-
             <li>
-                {{team_name}}
+                {{field}}
             </li>
-
-            <br>
-
-            <div>
-                <strong>Team leader</strong>
-            </div>
-
-            {{#with team_leader}}
-            <li>{{name}}</li>
-            <li>{{title}}</li>
-            <li>{{email}}</li>
             {{/with}}
-
-            <br>
-
-            <div>
-                <strong>Team members</strong>
-            </div>
-
-            {{#each team_members}}
-            <li>{{name}}</li>
-            <li>{{title}}</li>
-            <li>{{email}}</li>
-            <li>{{skills}}</li>
-
-            <br>
-
-            <div>
-                <strong>Projects</strong>
-            </div>
-
-            {{#each projects}}
-
-            <li>{{name}}</li>
-            <li>{{description}}</li>
-            <li>{{technologies}}</li>
-
-            <br>
-
-            <div>
-                <strong>Team members</strong>
-            </div>
-
-            {{#each team_members}}
-
-            <li>{{name}}</li>
-            <li>{{title}}</li>
-
-            {{/each}}
-            {{/each}}
-            {{/each}}
-            {{/each}}
-            {{/each}}
-            {{/each}}
         </ul>
-        {{/each}}
-    </section>
-    {{/with}}
+    </div>
 
-    {{!--
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
-    --}}
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
