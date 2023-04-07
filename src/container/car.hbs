@@ -1,0 +1,161 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{> title data="Car" big=true}}
+    <b>{{make}} {{model}}:</b> <em>{{year}}, {{color}}</em>
+    <section>
+        {{#with features}}
+        <ol>
+            <ul>
+                {{#with interior}}
+                <b>Seats</b>
+                {{#with seats}}
+                <li><b>Material:</b> {{material}}</li>
+                <li><b>Color:</b> {{color}}</li>
+                <li><b>Heated:</b> {{#if heated}} Yes {{else}} No {{/if}}</li>
+                <li><b>Ventilated:</b> {{#if ventilated}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                <br>
+                <b>Dashboard</b>
+                {{#with dashboard}}
+                <li><b>Material:</b> {{material}}</li>
+                <li><b>Color:</b> {{color}}</li>
+                <br>
+                <b>Display</b>
+                {{#with display}}
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Size:</b> {{size}}</li>
+                <li><b>Resolution:</b> {{resolution}}</li>
+                <li><b>Touchscreen:</b> {{#if touchscreen}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                {{/with}}
+                <br>
+                <b>Audio</b>
+                {{#with audio}}
+                <li><b>System:</b> {{system}}</li>
+                <li><b>Speakers:</b> {{speakers}}</li>
+                <li><b>Subwoofer:</b> {{#if subwoofer}} Yes {{else}} No {{/if}}</li>
+                <li><b>Bluetooth:</b> {{#if bluetoos}} Yes {{else}} No {{/if}}</li>
+                <li><b>USB:</b> {{#if USB}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                {{/with}}
+            </ul>
+        </ol>
+        <ol>
+            <ul>
+                {{#with exterior}}
+                <b>Wheels</b>
+                {{#with wheels}}
+                <li><b>Syze:</b> {{syze}}</li>
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Color:</b> {{color}}</li>
+                {{/with}}
+                <br>
+                <b>Headlights</b>
+                {{#with headlights}}
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Brightness:</b> {{brightness}}</li>
+                <li><b>Automatic:</b> {{#if automatic}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                <br>
+                <b>Sunroof</b>
+                {{#with sunroof}}
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Size:</b> {{size}}</li>
+                <li><b>Automatic:</b> {{#if automatic}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                {{/with}}
+            </ul>
+        </ol>
+        <ol>
+            <ul>
+                {{#with safety}}
+                <b>Airbags</b>
+                {{#with airbags}}
+                <li><b>Front:</b> {{front}}</li>
+                <li><b>Side:</b> {{side}}</li>
+                <li><b>Knee:</b> {{knee}}</li>
+                <li><b>Rear:</b> {{rear}}</li>
+                {{/with}}
+                <br>
+                <b>Assistance</b>
+                {{#with assistance}}
+                <li><b>Blind spot monitoring:</b> {{#if blind_spot_monitoring}} Yes {{else}} No {{/if}}</li>
+                <li><b>Rear cross traffic alert:</b> {{#if rear_cross_traffic_alert}} Yes {{else}} No {{/if}}</li>
+                <li><b>Lane departure warning:</b> {{#if lane_departure_warning}} Yes {{else}} No {{/if}}</li>
+                <li><b>Adaptive cruise control:</b> {{#if adaptive_cruise_control}} Yes {{else}} No {{/if}}</li>
+                <li><b>Collision warning:</b> {{#if collision_warning}} Yes {{else}} No {{/if}}</li>
+                {{/with}}
+                {{/with}}
+            </ul>
+        </ol>
+        {{/with}}
+    </section>
+
+    <hr>
+
+    <section>
+        <ol>
+            <ul>
+                <b>Engine</b>
+                {{#with engine}}
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Displacement:</b> {{displacement}}</li>
+                <li><b>Horsepower:</b> {{horsepower}}</li>
+                <li><b>Torque:</b> {{torque}}</li>
+                <br>
+                <b>Transmission</b>
+                {{#with transmission}}
+                <li><b>Type:</b> {{type}}</li>
+                <li><b>Gears:</b> {{gears}}</li>
+                {{/with}}
+                {{/with}}
+            </ul>
+        </ol>
+    </section>
+
+    <hr>
+
+    <section>
+        <ol>
+            <ul>
+                <b>Fuel economy</b>
+                {{#with fuel_economy}}
+                <li><b>City:</b> {{city}}</li>
+                <li><b>Highway:</b> {{highway}}</li>
+                <li><b>Combined:</b> {{combined}}</li>
+                {{/with}}
+            </ul>
+        </ol>
+    </section>
+
+    <hr>
+
+    <section>
+        <ol>
+            <ul>
+                <b>Price</b>
+                {{#with price}}
+                <li><b>Base:</b> {{base}}</li>
+                <li><b>Destination:</b> {{destination}}</li>
+                <br>
+                <b>Options</b>
+                {{#with options}}
+                <li><b>Navigation:</b> {{navigation}}</li>
+                <li><b>Moonroof:</b> {{moonroof}}</li>
+                <li><b>Premium_paint:</b> {{premium_paint}}</li>
+                {{/with}}
+                <b>Total:</b> {{total}}$
+                {{/with}}
+            </ul>
+        </ol>
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
