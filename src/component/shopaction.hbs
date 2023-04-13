@@ -1,0 +1,15 @@
+<section class="m-5">
+    <div class="card text-center ps-3 pb-3 pt-3 text-bg-success">
+        {{#with service}}
+        <div class="text-capitalize">
+            <h2>{{title}}</h2>
+            <br>
+            <p class="text-outline-light">{{description}}</p>
+            <br>
+            {{#each buttons}}
+            <a href="{{link}}" class="btn btn-primary" class="btn btn-link">{{text}}</a>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+</section>

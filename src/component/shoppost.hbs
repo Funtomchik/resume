@@ -1,0 +1,28 @@
+<section class="m-5">
+    <div>
+        {{#with newsOtherBlock}}
+        <h2 class="text-center">{{title}}</h2>
+
+        <br>
+
+        <div class="row g-4">
+            {{#each cards}}
+            <div class="col-3">
+                <div class="card text-bg-dark text-white">
+                    <div class="card-header p-2">{{title}}
+                        {{#if isTop}}
+                        <span class="badge rounded-pill text-bg-success p-1">TOP</span> {{/if}}
+
+                        {{#if idNew}}
+                        <span class="badge rounded-pill text-bg-danger p-1">New</span> {{/if}}
+                    </div>
+                    <div class="p-2">
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+</section>
