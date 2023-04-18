@@ -1,0 +1,19 @@
+<main class="m-5">
+    <section>
+        <div class="row gy-3 gx-3">
+            {{#with newsData}}
+            <div class="col-12">
+                <img class="card-img-top" src="{{photo}}">
+            </div>
+            {{#with head}}
+            <h3>{{heading}}</h3>
+            <p>{{description}}</p>
+            {{/with}}
+            {{#each body}}
+            <h2>{{title}}</h2>
+            <p>{{text}}</p>
+            {{/each}}
+            {{/with}}
+        </div>
+    </section>
+</main>

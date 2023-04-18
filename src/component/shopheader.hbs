@@ -5,6 +5,7 @@
                 <h2 class="ps-3">{{navigation.Logo}}</h2>
             </div>
             <div class="col-5">
+                <div class="nav">
                 <div class="nav col-8">
                     {{#with navigation.links.[0]}}
                     <div class="nav-item">
@@ -17,6 +18,11 @@
                     </div>
                     {{/with}}
                     {{#with navigation.links.[2]}}
+                    <div class="nav-item">
+                        <a href="https://www.youtube.com/" class="nav-link">{{text}}</a>
+                    </div>
+                    {{/with}}
+                    {{#with navigation.links.[3]}}
                     <div class="nav-item">
                         <a href="https://www.youtube.com/" class="nav-link disabled">{{text}}</a>
                     </div>
