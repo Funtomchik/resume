@@ -13,3 +13,23 @@
         {{/with}}
     </div>
 </section>
+
+{{#with subscribe}}
+<div class="card">
+    <div class="card-body text-bg-dark">
+        <div class="col-12">
+            <ul class="nav nav-pils">
+                <li class="col-5">
+                    <h2>{{header}}</h2>
+                    <p class="mb-0">{{description}}</p>
+                </li>
+                {{#each buttons}}
+                <li class="m-2 ms-4 mt-3 me-0">
+                    <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{/with}}
