@@ -1,0 +1,23 @@
+{{#with goodsOtherBlock}}
+<div class="text-center">
+    <h2>{{title}}</h2>
+</div>
+<br>
+<div class="row gy-3 gx-3">
+    {{#each cards}}
+    <div class="col-4">
+        <img class="card-img-top" src="{{image}}">
+        <div class="card-body">
+            <div class="card-header"><b>{{title}}</b></div>
+            {{#if isHot}}
+            <span class="badge rounded-pill text-bg-success p-1">HOT!</span>
+            {{#if isNew}}
+            <span class="badge rounded-pill text-bg-danger p-1">New{{/if}}</span>
+            {{/if}}
+            <br>
+            <p>{{description}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/with}}
