@@ -1,0 +1,82 @@
+<main class="m-5">
+    <section>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-8">
+                    {{#with header}}
+                    <h1>{{title}}</h1>
+                </div>
+
+                <div class="col-4">
+                    {{#with button}}
+                    <button>
+                        <a class="btn m-1 btn-secondory" href="{{link}}" role="button">{{text}}</a>
+                    </button>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-8">
+                    {{#with total}}
+                    <h3>{{title}}</h3>
+                    <h1>{{amount}}</h1>
+                    <h5>{{delivery}}</h5>
+                </div>
+                <div class="col-4">
+                    {{#each buttons}}
+                    <ol class="nav nav-item">
+                        {{#if isSuccess}}
+                        <li class="nav-link"> <button href="{{link}}"
+                                class="btn btn-success px-4 mx-0">{{text}}</button></li>
+                        {{/if}}
+                        {{#if isOutline}}
+                        <li class="nav-link"> <button href="{{link}}"
+                                class="btn btn-outline-success px-3">{{text}}</button>
+                        </li>
+                        {{/if}}
+                    </ol>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        {{#with subscribe}}
+        <div class="card">
+            <div class="card-body text-bg-dark">
+                <div class="col-12">
+                    <ul class="nav nav-pils">
+                        <li class="col-7">
+                            <h2>{{header}}</h2>
+                            <p class="mb-0">{{description}}</p>
+                        </li>
+                        {{#each buttons}}
+                        <li class="m-2 ms-4 mt-3 me-0">
+                            <a class="btn btn-primary" href="{{link}}" role="button">{{text}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr>
+
+
+
+</main>
