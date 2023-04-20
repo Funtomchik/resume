@@ -1,89 +1,43 @@
-<section>
-    <h1>{{header}}</h1>
-    {{#with purchase}}
-    <div class="row g-4">
-        <div class="col-12">
-            <div class="nav nav-tabs">
-                {{#each tabs}}
-                <div class="nav">
-                    <a href="#" class="nav-link active">{{this}}</a>
+<div class="mt-5 col-12">
+    <div class="row">
+
+        <div class="col-3 pt-2">
+            <p class="fs-4 fw-medium">{{number}}</p>
+            <p>{{status}}</p>
+        </div>
+
+        <div class="col-2 pe-6 pt-5">
+            {{#with amount}}
+            <p>{{title}}</p>
+            <p class="fs-5">{{value}}</p>
+            {{/with}}
+        </div>
+
+        <div class="col-5">
+
+            <div class="row">
+                {{#each images}}
+                <div class="col-4 pt-5">
+                    <img src="{{this}}">
                 </div>
                 {{/each}}
             </div>
+
         </div>
-    </div>
 
-    <div class="mt-4">
-        <div class="col-12">
-            {{#with actionBlock}}
-
-            {{#with input}}
-            <div class="row">
-                <div class="col-4">
-                    {{#with placeholder}}
-                    <div class="form-control">{{this}}</div>
-                    {{/with}}
-                </div>
-                {{/with}}
-                <div class="col-8">
-                    {{#each buttons}}
-                    <a href="{{link}}" class="btn m-1 {{#if isSuccess}} text-light btn-success {{/if}}
-                     {{#if isOutline}} btn-outline-success {{/if}} 
-                     {{#if isDanger}} btn-outline-danger {{/if}}">
-                        {{text}}</a>
-                    {{/each}}
+        <div class="col-2 pe-6 pt-5">
+            {{#with button}}
+            <div class="row pe-9">
+                <div class="nav nav-item">
+                    {{#if isPrimary}}
+                    <div class="nav-link">
+                        <a href="{{link}}" class="btn btn-primary px-4 mx-0">{{text}}</a>
+                    </div>
+                    {{/if}}
                 </div>
             </div>
             {{/with}}
         </div>
     </div>
-
-    <hr>
-
-    {{#each itemList}}
-    <div class="mt-5 col-12">
-        <div class="row">
-
-            <div class="col-3 pt-2">
-                <p class="fs-4 fw-medium">{{number}}</p>
-                <p>{{status}}</p>
-            </div>
-
-            <div class="col-2 pe-6 pt-5">
-                {{#with amount}}
-                <p>{{title}}</p>
-                <p class="fs-5">{{value}}</p>
-                {{/with}}
-            </div>
-
-            <div class="col-5">
-
-                <div class="row">
-                    {{#each images}}
-                    <div class="col-4 pt-5">
-                        <img src="{{this}}">
-                    </div>
-                    {{/each}}
-                </div>
-
-            </div>
-
-            <div class="col-2 pe-6 pt-5">
-                {{#with button}}
-                <div class="row pe-9">
-                    <div class="nav nav-item">
-                        {{#if isPrimary}}
-                        <div class="nav-link">
-                            <a href="{{link}}" class="btn btn-primary px-4 mx-0">{{text}}</a>
-                        </div>
-                        {{/if}}
-                    </div>
-                </div>
-                {{/with}}
-            </div>
-        </div>
-    </div>
-    <hr>
-    {{/each}}
-    {{/with}}
-</section>
+</div>
+<hr>
