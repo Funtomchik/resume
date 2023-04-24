@@ -9,7 +9,7 @@
                     <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
                 </div>
                 {{/each}}
-            </div> --}}
+            </div>
 
             <div class=" d-flex col-10">
                 {{#each footer}}
@@ -21,5 +21,16 @@
                     {{/each}}
                 </div>
                 {{/each}}
+
+            </div>
+        </div>
+    </div> --}}
+
+    <div class=" d-flex col-12">
+        {{#each footer}}
+        <div class="nav">
+            {{#each this}}
+            <div>
+                <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
             </div>
 </section>
