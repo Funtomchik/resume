@@ -1,0 +1,393 @@
+<main class="m-5">
+
+    <section>
+        <div class="row col-8">
+            <nav>
+                <ol class="breadcrumb">
+
+                    {{#each breadcrumb}}
+                    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+                    {{#if @last}} <li class="breadcrumb-item active" aria-current="page">{{name}}</li>{{/if}}
+                    {{/each}}
+
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section>
+
+        <h1>{{header}}</h1>
+
+        <div class="row mt-3">
+
+            {{#each sortBlock}}
+
+            <div class="col-3">
+                <select class="form-select form-select-sm">
+                    <option>{{placeholder}}</option>
+
+                    {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                    {{/each}}
+
+                </select>
+            </div>
+
+            {{/each}}
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="row">
+
+            {{#with filterBlock}}
+
+            <div class="col-4">
+                <div class="card p-2">
+
+                    {{#with sellers}}
+                    {{title}}
+                    <div class="pt-2">
+
+                        {{#each list}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with brands}}
+
+                    {{title}}
+
+                    <div class="pt-2">
+
+                        {{#with input}}
+                        <div class="form-control">{{placeholder}}</div>
+                        {{/with}}
+
+                    </div>
+
+                    <div class="pt-2">
+
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with price}}
+
+                    {{title}}
+
+                    {{#with range}}
+                    <div class="form-control">{{from}}</div>
+
+                    <div class="pt-2">
+                        <div class="form-control">{{to}}</div>
+                    </div>
+                    {{/with}}
+
+                    <div class="pt-2">
+                        {{#with button}}
+                        <a class="btn btn-outline-secondary" href="{{link}}">{{text}}</a>
+                        {{/with}}
+                    </div>
+
+                    {{/with}}
+
+                    <div class="pt-2">
+                        {{#with filterList.[0]}}
+                        {{title}}
+                    </div>
+
+                    <div class="pt-2">
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <div class="pt-2">
+                        {{#with filterList.[1]}}
+                        {{title}}
+                    </div>
+
+                    <div class="pt-2">
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <div class="pt-2">
+                        {{#with filterList.[2]}}
+                        {{title}}
+                    </div>
+
+                    <div class="pt-2">
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <div class="pt-2">
+                        {{#with filterList.[3]}}
+                        {{title}}
+                    </div>
+
+                    <div class="pt-2">
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <div class="pt-2">
+                        {{#with filterList.[4]}}
+                        {{title}}
+                    </div>
+
+                    <div class="pt-2">
+                        {{#each options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{value}}</label>
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+
+            <div class="col-4">
+                {{#with goodsList.[0]}}
+
+                {{> catalogItem}}
+
+                {{/with}}
+
+                <div class="mt-2">
+                    {{#with goodsList.[1]}}
+                    <div class="card p-2">
+                        <img class="card-img-top" src="{{img}}">
+                        <div class="pt-2">
+                            <div class="pt-2">
+                                {{#if isFree}}
+                                <button class="btn btn-secondary p-1">Безкоштовна доставка</button>
+                                {{/if}}
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <h4>{{name}}</h4>
+                        </div>
+
+                        <div class="pt-2">
+                            {{#with review}}
+                            {{amount}} {{text}}
+                            {{/with}}
+                        </div>
+
+                        <div class="pt-2">
+                            <h4>{{price}}</h4>
+                        </div>
+
+                        <div class="pt-2">
+                            {{delivery}}
+                        </div>
+
+                        <div class="pt-2">
+                            {{#each buttons}}
+                            <div class="pt-2">
+                                <a class="btn {{#if isPrimary}} btn-primary {{/if}}
+                            {{#if isSecondary}} text-light btn-secondary {{/if}}" href="{{link}}">{{text}}</a>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        <div class="pt-2">
+                            <ul>
+                                {{#each characteristics}}
+                                <li>
+                                    <div class="pt-2">
+                                        {{title}}: {{value}}
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+
+            <div class="col-4">
+                {{#with goodsList.[2]}}
+                <div class="card p-2">
+                    <img class="card-img-top" src="{{img}}">
+                    <div class="card-body">
+                        {{#if isHot}}
+                        <span class="badge rounded-pill text-bg-success p-1">HOT!</span>
+                        {{/if}}
+
+                        <div class="pt-2">
+                            {{#if isFree}}
+                            <button class="btn btn-secondary p-1">Безкоштовна доставка</button>
+                            {{/if}}
+                        </div>
+
+                        <div class="pt-2">
+                            <h4>{{name}}</h4>
+                        </div>
+
+                        <div class="pt-2">
+                            {{#with review}}
+                            {{amount}} {{text}}
+                            {{/with}}
+                        </div>
+
+                        <div class="pt-2">
+                            <h4>{{price}}</h4>
+                        </div>
+
+                        <div class="pt-2">
+                            {{delivery}}
+                        </div>
+
+                        <div class="pt-2">
+                            {{#each buttons}}
+                            <div class="pt-2">
+                                <a class="btn {{#if isPrimary}} btn-primary {{/if}}
+                            {{#if isSecondary}} text-light btn-secondary {{/if}}" href="{{link}}">{{text}}</a>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        <div class="pt-2">
+                            <ul>
+                                {{#each characteristics}}
+                                <li>
+                                    <div class="pt-2">
+                                        {{title}}: {{value}}
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{/with}}
+
+                <div class="mt-2">
+                    {{#with goodsList.[3]}}
+                    <div class="card p-2">
+                        <img class="card-img-top" src="{{img}}">
+                        <div class="card-body">
+                            {{#if isHot}}
+                            <span class="badge rounded-pill text-bg-success p-1">HOT!</span>
+                            {{/if}}
+
+                            <div class="pt-2">
+                                {{#if isFast}}
+                                <button class="btn btn-success p-1">Швидка доставка</button>
+                                {{/if}}
+                            </div>
+
+                            <div class="pt-2">
+                                <h4>{{name}}</h4>
+                            </div>
+
+                            <div class="pt-2">
+                                {{#with review}}
+                                {{amount}} {{text}}
+                                {{/with}}
+                            </div>
+
+                            <div class="pt-2">
+                                <h4>{{price}}</h4>
+                            </div>
+
+                            <div class="pt-2">
+                                {{delivery}}
+                            </div>
+
+                            <div class="pt-2">
+                                {{#each buttons}}
+                                <div class="pt-2">
+                                    <a class="btn {{#if isPrimary}} btn-primary {{/if}}
+                            {{#if isSecondary}} text-light btn-secondary {{/if}}" href="{{link}}">{{text}}</a>
+                                </div>
+                                {{/each}}
+                            </div>
+
+                            <div class="pt-2">
+                                <ul>
+                                    {{#each characteristics}}
+                                    <li>
+                                        <div class="pt-2">
+                                            {{title}}: {{value}}
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="mt-4">
+            <div class="card text-center ps-3 pb-3 pt-3 text-bg-success">
+                {{#with service}}
+                <div class="text-capitalize">
+                    <h2>{{title}}</h2>
+                    <p class="text-outline-light">{{description}}</p>
+                    {{#each buttons}}
+                    <a href="{{link}}" class="btn btn-primary" class="btn btn-link">{{text}}</a>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+
+</main>
