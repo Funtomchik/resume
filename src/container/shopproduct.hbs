@@ -89,8 +89,10 @@
         <div class="card m-3">
             <div class="card-body">
                 {{#each actionList}}
-                <button
-                    class="btn m-1 {{#if isWarning}} text-light btn-warning {{/if}} {{#if isError}} btn-outline-danger {{/if}} {{#if isSuccess}} btn-success {{/if}} {{#if isGood}} btn-outline-success {{/if}}">{{name}}</button>
+                <button class="btn m-1 {{#if isWarning}} text-light btn-warning {{/if}}
+                     {{#if isError}} btn-outline-danger {{/if}}
+                     {{#if isSuccess}} btn-success {{/if}} 
+                     {{#if isGood}} btn-outline-success {{/if}}">{{name}}</button>
                 {{/each}}
             </div>
         </div>
