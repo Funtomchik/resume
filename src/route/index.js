@@ -37,11 +37,118 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/index8', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index8', {
+    layout: 'index',
+    header: {
+      name: {
+        firstname: 'Andriy',
+        lastname: 'Datsyuk',
+      },
+      Logo: 'Resume project',
+    },
+    page: {
+      title: 'List of pages',
+      text: 'This is a general page of links to homework completed during the first phase of the Resume project using various layout techniques.',
+    },
+    buttons: [
+      {
+        text: 'Summary',
+        link: 'http://localhost:3000/summary',
+      },
+      {
+        text: 'Skills',
+        link: 'http://localhost:3000/skills',
+      },
+      {
+        text: 'Education',
+        link: 'http://localhost:3000/education',
+      },
+      {
+        text: 'Work',
+        link: 'http://localhost:3000/work',
+      },
+      {
+        text: 'Bio',
+        link: 'http://localhost:3000/bio',
+      },
+      {
+        text: 'Person',
+        link: 'http://localhost:3000/person',
+      },
+      {
+        text: 'Web',
+        link: 'http://localhost:3000/web',
+      },
+      {
+        text: 'Program',
+        link: 'http://localhost:3000/program',
+      },
+      {
+        text: 'Js',
+        link: 'http://localhost:3000/js',
+      },
+      {
+        text: 'Car',
+        link: 'http://localhost:3000/car',
+      },
+      {
+        text: 'Mac',
+        link: 'http://localhost:3000/mac',
+      },
+      {
+        text: 'Facebook',
+        link: 'http://localhost:3000/facebook',
+      },
+      {
+        text: 'Task21',
+        link: 'http://localhost:3000/task21',
+      },
+      {
+        text: 'Task22',
+        link: 'http://localhost:3000/task22',
+      },
+      {
+        text: 'Task31',
+        link: 'http://localhost:3000/task31',
+      },
+      {
+        text: 'Shophome',
+        link: 'http://localhost:3000/shophome',
+      },
+      {
+        text: 'Shopproduct',
+        link: 'http://localhost:3000/shopproduct',
+      },
+      {
+        text: 'Shopnews',
+        link: 'http://localhost:3000/shopnews',
+      },
+      {
+        text: 'Shoporder',
+        link: 'http://localhost:3000/shoporder',
+      },
+      {
+        text: 'Shopcart',
+        link: 'http://localhost:3000/shopcart',
+      },
+      {
+        text: 'Shopprofile',
+        link: 'http://localhost:3000/shopprofile',
+      },
+      {
+        text: 'Shopreview',
+        link: 'http://localhost:3000/shopreview',
+      },
+      {
+        text: 'Shopcatalog',
+        link: 'http://localhost:3000/shopcatalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -3048,8 +3155,8 @@ router.get('/shopcatalog', function (req, res) {
     ],
   })
   //                  ↑↑ сюди вводимо JSON дані
-})          
-          
+})
+
 // ================================================================
 
 router.get('/shopreview', function (req, res) {
@@ -3081,7 +3188,6 @@ router.get('/shopreview', function (req, res) {
       Logo: 'Logo',
     },
 
-    
     formBlock: {
       header: 'Відгуки покупців про Ноут',
       rating: {
